@@ -5,15 +5,15 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * @Author 无双
+ * @Author 无双老师
  * @Date 2018/8/25
  * @Description ConcurrentModificationException异常讲解
  */
 public class ConcurrentModificationExceptionDemo {
 
     public static void main(String[] args) {
-//        oneThreadTest();
-        multiThreadTest();
+        oneThreadTest();
+//        multiThreadTest();
     }
 
     public static void oneThreadTest() {
@@ -32,9 +32,9 @@ public class ConcurrentModificationExceptionDemo {
             String element = iterator.next();
             if ("李四".equals(element)) {
                 //错误示范：删除李四
-                //list.remove(element);
+                list.remove(element);
                 //正确示范：删除李四
-                iterator.remove();
+//                iterator.remove();
             }
         }
     }
